@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<PrimeiroMVC.Models.Aluno>
 @{
-    ViewBag["Title"] = "Listar Alunos";
+    ViewData["Title"] = "Listar Alunos";
 }
 <h1>Listar Alunos</h1>
 
@@ -13,5 +13,16 @@
             <th>Matriclula</th>
         </tr>
     </thead>
+    <tbody>
+        @foreach (var aluno in Model)
+        {
+            <tr>
 
-</table>
+                <td>@aluno.AlunoId</td>
+                <td>@aluno.Nome</td>
+                <td>@aluno.Email</td>
+                <td>@aluno.RM</td>
+
+            </tr>
+        }
+    </tbody>
